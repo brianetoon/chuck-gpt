@@ -1,16 +1,18 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
 
 export default function SiteHeader() {
   return (
-    <header>
-      <span>Chuck GPT</span>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Chat</li>
-          <li>About</li>
-        </ul>
-      </nav>
+    <header className='site-header'>
+      <div className="site-header__inner | container">
+        <span className="site-header__logo">Chuck GPT</span>
+        <nav className="site-header__nav">
+          <ul className="site-header__nav-list">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/chat">Chat</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
