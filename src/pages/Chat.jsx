@@ -2,15 +2,21 @@ import SelectCategory from "../components/SelectCategory";
 import useChuckStore from "../store/useChuckStore";
 
 export default function Chat() {
+
+  const { getJoke, selectedCategory, addToChats, chats } = useChuckStore();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const joke = await fetchJoke(currentCategory);
-    console.log(joke)
+    const joke = await getJoke(selectedCategory);
+    addToChats(joke);
   }
 
   return (
     <div className="chat">
-      <h2>Chat with Chuck</h2>
+
+      {chats.map(chat => (
+        <p key={chat.id}>{chat.value}</p>
+      ))}
       <form onSubmit={handleSubmit}>
         <SelectCategory />
         <button type="submit">Submit</button>

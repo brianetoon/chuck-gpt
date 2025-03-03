@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { fetchCategories, fetchJoke } from "../api/jokeService";
 
 const useChuckStore = create((set) => ({
+  joke: {},
   chats: [],
   categories: [],
   selectedCategory: "random",
@@ -17,7 +18,24 @@ const useChuckStore = create((set) => ({
     }
   },
 
-  setCategory: (category) => set({ selectedCategory: category})
+  setCategory: (category) => set({ selectedCategory: category}),
+
+  getJoke: async (category) => {
+    try {
+      const newJoke = await fetchJoke(category);
+      set({ joke: newJoke });
+      return newJoke;
+    } catch(error) {
+      set({ error: error.message });
+    }
+  },
+
+  addToChats: (chat) => {
+    if (!chat) return;
+    set((state) => ({
+      chats: [...state.chats, chat]
+    }))
+  }
 
 }));
 
