@@ -1,34 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchCategories, fetchJoke } from "../services/jokeService";
 
 export default function Chat() {
-  const [input, setInput] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState("random")
 
-  const getChuck = async () => {
-    try {
-      const res = await fetch(`https://api.chucknorris.io/jokes/random`);
-      const data = await res.json();
-      console.log(data);
-    } catch(err) {
-      console.log(err)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const joke = await fetchJoke(currentCategory);
+    console.log(joke)
+  }
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const options = await fetchCategories();
+      setCategories(options);
     }
-  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(input)
-    getChuck()
-  }
+    getCategories();
+  }, [])
 
   return (
-    <div>
-      <h2>Chat</h2>
+    <div className="chat">
+      <h2>Chat with Chuck</h2>
       <form onSubmit={handleSubmit}>
-        <input 
-          type="text" 
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="submit">Enter</button>
+        <select name="options" onChange={(e) => setCurrentCategory(e.target.value)}>
+          <option value="random">anything</option>
+          {categories.length > 0 && categories.map(category => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
+        <button type="submit">Submit</button>
       </form>
     </div>
   )
