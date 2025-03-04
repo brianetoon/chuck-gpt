@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import useChuckStore from "../store/useChuckStore";
+import UserMessage from "./UserMessage";
+import BotMessage from "./BotMessage";
 
 export default function ChatWindow() {
   const { chats } = useChuckStore();
@@ -12,7 +14,9 @@ export default function ChatWindow() {
   return (
     <div className="chat-window">
       {chats.map(chat => (
-        <p key={chat.key}>{chat.value}</p>
+        chat.type === "user" ?
+          <UserMessage chat={chat} key={chat.key} /> :
+          <BotMessage chat={chat} key={chat.key} />
       ))}
       <div ref={chatEndRef}></div>
     </div>
