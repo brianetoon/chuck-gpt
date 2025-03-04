@@ -3,6 +3,7 @@
 .site-header {
   background-color: crimson;
   padding-block: 1rem;
+  z-index: 10;
 
   &__inner {
     display: flex;

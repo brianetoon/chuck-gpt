@@ -24,6 +24,7 @@ const useChuckStore = create((set) => ({
     try {
       const newJoke = await fetchJoke(category);
       set({ joke: newJoke });
+      console.log(newJoke)
       return newJoke;
     } catch(error) {
       set({ error: error.message });

@@ -1,0 +1,22 @@
+@use '../abstracts/' as *;
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.chat-window {
+  border: 1px solid white;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat-form {
+  display: flex;
+  border: 1px solid white;
+  padding-block: 1rem;
+}
