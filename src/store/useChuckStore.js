@@ -5,6 +5,7 @@ const useChuckStore = create((set) => ({
   joke: {},
   chats: [],
   categories: [],
+  favorites: [],
   selectedCategory: "",
   loading: false,
   error: null,
