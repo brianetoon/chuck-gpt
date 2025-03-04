@@ -8,12 +8,18 @@
   line-height: 1;
   border: 0;
   font-weight: $fw-700;
-  padding: 1.125em 2em;
+  padding: fluid-size('xs') fluid-size('m');
   transition: 275ms ease;
+  border-radius: $border-radius;
 
   &[data-type="primary"] {
-    background-color: clr(primary, '400');
-    color: clr(neutral, '900');
+    background-color: rgb(45, 45, 116);
+    color: clr(neutral, '100');
+  }
+
+  &[data-type="secondary"] {
+    background-color: crimson;
+    color: clr(neutral, '100');
   }
 
   &[data-type="outline"] {

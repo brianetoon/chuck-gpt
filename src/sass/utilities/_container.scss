@@ -2,7 +2,7 @@
 
 .container {
   --max-width: #{$container-max-width};
-  --padding: #{size('16')};
+  --padding: #{fluid-size('s')};
 
   width: min(var(--max-width), 100% - ( var(--padding) * 2) );
   margin-inline: auto;

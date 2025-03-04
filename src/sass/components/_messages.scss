@@ -2,20 +2,18 @@
 
 .user-message {
   background-color: rgb(45, 45, 116);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  text-align: right;
+  padding: fluid-size('2xs') fluid-size('s');
+  border-radius: $border-radius;
   width: fit-content;
   align-self: end;
 }
 
 .bot-message {
   display: flex;
-  gap: 1rem;
+  gap: fluid-size('s');
 
   img {
-    width: 3.5rem;
-    height: 3.5rem;
-    // object-fit: cover;
+    width: fluid-size('xl');
+    height: fluid-size('xl');
   }
 }
