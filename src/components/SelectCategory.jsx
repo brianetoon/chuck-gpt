@@ -9,8 +9,12 @@ export default function SelectCategory() {
   }, [])
 
   return (
-    <select name="options" onChange={(e) => setCategory(e.target.value)}>
-      <option value="random">Select a category</option>
+    <select 
+      className="chat-select" 
+      name="options" 
+      onChange={(e) => setCategory(e.target.value)}
+    >
+      <option value="">Select a category</option>
       {categories.length > 0 && categories.map(category => (
         <option key={category} value={category}>{category}</option>
       ))}

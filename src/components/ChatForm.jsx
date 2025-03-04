@@ -19,7 +19,14 @@ export default function ChatForm() {
   return (
     <form className="chat-form" onSubmit={handleSubmit}>
       <SelectCategory />
-      <button className="button" type="submit" data-type="primary">Get Joke</button>
+      <button 
+        className="button" 
+        type="submit" 
+        data-type="primary"
+        disabled={!selectedCategory}
+      >
+        Submit
+      </button>
     </form>
   )
 }

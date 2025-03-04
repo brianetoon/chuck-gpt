@@ -22,16 +22,19 @@
   padding: fluid-size('s');
   border-radius: $border-radius;
   margin-bottom: fluid-size('3xs-2xs');
-  background-color: clr(neutral, '500');
+  background-color: crimson;
   gap: fluid-size('s');
 
   select {
+    appearance: none;
+    background: url('/icons/down-caret.svg') no-repeat right 0 center;
+    background-color: clr(neutral, '100');
     flex-grow: 1;
     text-align: center;
     font-size: fs('500');
     border: none;
     border-radius: $border-radius;
     font-weight: 500;
+    color: clr(primary, '600');
   }
-
 }

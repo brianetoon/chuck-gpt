@@ -7,8 +7,8 @@ export default function SiteHeader() {
         <span className="site-header__logo">Chuck GPT</span>
         <nav className="nav">
           <ul className="nav__list">
-            <li><NavLink className="nav__link" to="/">Home</NavLink></li>
             <li><NavLink className="nav__link" to="/chat">Chat</NavLink></li>
+            <li><NavLink className="nav__link" to="/favorites">Favorites</NavLink></li>
             <li><NavLink className="nav__link" to="/about">About</NavLink></li>
           </ul>
         </nav>
