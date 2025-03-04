@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useChuckStore from "../store/useChuckStore";
 
 export default function SelectCategory() {
-  const { categories, getCategories, setCategory } = useChuckStore();
+  const { categories, getCategories, selectedCategory, setCategory } = useChuckStore();
 
   useEffect(() => {
     getCategories();
@@ -12,6 +12,7 @@ export default function SelectCategory() {
     <select 
       className="chat-select" 
       name="options" 
+      value={selectedCategory}
       onChange={(e) => setCategory(e.target.value)}
     >
       <option value="">Select a category</option>
