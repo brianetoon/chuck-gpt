@@ -23,9 +23,9 @@ const useChuckStore = create((set) => ({
   getJoke: async (category) => {
     try {
       const newJoke = await fetchJoke(category);
-      set({ joke: newJoke });
-      console.log(newJoke)
-      return newJoke;
+      const formattedJoke = { ...newJoke, key: crypto.randomUUID() }
+      set({ joke: formattedJoke });
+      return formattedJoke;
     } catch(error) {
       set({ error: error.message });
     }

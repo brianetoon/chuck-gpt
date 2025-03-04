@@ -1,4 +1,3 @@
-import { Value } from "sass";
 import useChuckStore from "../store/useChuckStore";
 import SelectCategory from "./SelectCategory";
 
@@ -8,7 +7,7 @@ export default function ChatForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userMessage = {
-      id: crypto.randomUUID(),
+      key: crypto.randomUUID(),
       type: "user",
       value: `Give me a ${selectedCategory} related Chuck joke!`,
     }
