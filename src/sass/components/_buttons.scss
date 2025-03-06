@@ -3,13 +3,14 @@
 .button {
   display: inline-flex;
   cursor: pointer;
+  justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
   border: 0;
   font-weight: 500;
   padding: fluid-size('xs') fluid-size('m');
-  transition: 275ms ease;
+  transition: background-color 300ms ease;
   border-radius: $border-radius;
 
   &[data-type="primary"] {

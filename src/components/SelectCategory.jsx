@@ -15,7 +15,7 @@ export default function SelectCategory() {
       value={selectedCategory}
       onChange={(e) => setCategory(e.target.value)}
     >
-      <option value="">Select a category</option>
+      <option value="">Select category</option>
       {categories.length > 0 && categories.map(category => (
         <option key={category} value={category}>{category}</option>
       ))}
