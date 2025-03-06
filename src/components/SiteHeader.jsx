@@ -4,7 +4,7 @@ export default function SiteHeader() {
   return (
     <header className='site-header'>
       <div className="site-header__inner | container">
-        <span className="site-header__logo">Chuck GPT</span>
+        <span className="site-header__logo | fs-500">Chuck GPT</span>
         <nav className="nav">
           <ul className="nav__list">
             <li><NavLink className="nav__link" to="/chat">Chat</NavLink></li>

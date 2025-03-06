@@ -8,13 +8,14 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: fluid-size('s');
   }
 
   .nav {
     &__list{
       display: flex;
-      gap: fluid-size('s');
+      gap: fluid-size('s-m');
     }
     &__link {
       color: clr(neutral, '100');

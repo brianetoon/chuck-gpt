@@ -23,11 +23,11 @@
   }
 
   &:disabled {
-    background-color: clr(neutral, '600');
+    background-color: clr(neutral, '500');
     cursor: not-allowed;
 
     &:hover {
-      background-color: clr(neutral, '600');
+      background-color: clr(neutral, '500');
     }
   }
 }

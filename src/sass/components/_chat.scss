@@ -6,6 +6,23 @@
   justify-content: flex-end;
   height: calc(100dvh - fluid-size('2xl'));
   overflow: hidden;
+  position: relative;
+}
+
+.chat::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; 
+  max-width: 35rem;
+  aspect-ratio: 1 / 1;
+  background: url('/images/chuck.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.1; 
+  pointer-events: none; 
+  z-index: -1; 
 }
 
 .chat-window {
